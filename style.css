@@ -21,8 +21,18 @@ body {
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
     overflow: hidden;
-    margin: 20px;
+    margin: 0 20px;
 }
+
+/* .alert {
+    width: 300px;
+    padding: 10px 20px;
+    background-color: #ffdddd;
+    color: #333;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    text-align: center;
+} */
 
 .form-box {
     position: absolute;
@@ -76,6 +86,41 @@ form {
     color: #333;
     font-weight: 500;
 }
+
+.email-warning,
+.password-warning {
+    visibility: hidden;
+    position: absolute;
+    font-size: 12px;
+    color: red;
+    margin-top: 0px;
+    left: 20px;
+    transition: .5s ease-in-out;
+}
+
+.email-warning.active,
+.password-warning.active {
+    margin-top: -20px;
+    visibility: visible;
+}
+
+.register-email-warning,
+.register-password-warning {
+    visibility: hidden;
+    position: absolute;
+    font-size: 12px;
+    color: red;
+    margin-top: 0px;
+    left: 20px;
+    transition: .5s ease-in-out;
+}
+
+.register-email-warning.active,
+.register-password-warning.active {
+    margin-top: -20px;
+    visibility: visible;
+}
+
 
 input-box input::placeholder {
     font-weight: 400;

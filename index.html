@@ -18,14 +18,16 @@
             <form action="">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="email" placeholder="Email" required>
                     <i class='bx bxs-envelope'></i>
+                    <span class="email-warning">Insira um email válido</span>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Senha" required minlength="6">
+                    <input type="password" name="password" placeholder="Senha" required>
                     <i class='bx bxs-lock-alt'></i>
-                    <span class="login-error"></span>
+                    <span class="password-warning">A senha deve ter no mínimo 6 caracteres</span>
                 </div>
+
                 <div class="forgot-link">
                     <a href="#">Esqueceu a senha?</a>
                 </div>
@@ -48,12 +50,14 @@
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" name="register-email" placeholder="Email" required>
+                    <input type="text" name="register-email" placeholder="Email" required>
                     <i class='bx bxs-envelope'></i>
+                    <span class="register-email-warning">Insira um email válido</span>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="register-password" placeholder="Senha" required minlength="6">
+                    <input type="password" name="register-password" placeholder="Senha" required>
                     <i class='bx bxs-lock-alt'></i>
+                    <span class="register-password-warning">A senha deve ter no mínimo 6 caracteres</span>
                 </div>
                 <button type="submit" class="btn">Registrar</button>
                 <p>Ou registre-se com as plataformas</p>
@@ -79,6 +83,10 @@
             </div>
         </div>
     </div>
+    <!-- <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        This is an alert box.
+    </div> -->
     <script src="script.js"></script>
 </body>
 
