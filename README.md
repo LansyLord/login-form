@@ -65,6 +65,6 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ## 💡 Autor
 
-- **Seu Nome**: [@lansylord](https://github.com/lansylord)
+- [@lansylord](https://github.com/lansylord)
 
 Feito com ❤️ para tornar o login mais elegante e funcional!
