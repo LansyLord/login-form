@@ -1,6 +1,53 @@
 const container = document.querySelector('.container');
 const registerBtn = document.querySelector('.register-btn');
 const loginBtn = document.querySelector('.login-btn');
+const errorAlertBox = document.querySelector('.alert-error');
+const successAlertBox = document.querySelector('.alert-success');
+const loginTitle = document.querySelector('.container h1.title');
+const emailInput = document.querySelector('input[placeholder="Email"]');
+const passwordInput = document.querySelector('input[placeholder="Senha"]');
+const emailInputBox = document.querySelector('.input-box.email');
+
+
+// Mostrar o alerta
+function showErrorAlert() {
+    errorAlertBox.style.display = 'block'; // Define o display
+    setTimeout(() => {
+        errorAlertBox.classList.add('active');
+        loginTitle.classList.add('active');
+        emailInputBox.classList.add('active'); // Inicia o fade-in
+    }, 0); // Pequeno atraso para ativar a transição
+}
+
+// Esconder o alerta
+function hideErrorAlert() {
+    errorAlertBox.classList.remove('active');
+    loginTitle.classList.remove('active');
+    emailInputBox.classList.remove('active'); // Inicia o fade-out
+    setTimeout(() => {
+        errorAlertBox.style.display = 'none'; // Remove completamente após o fade-out
+    }, 500); // Duração do fade-out em ms
+}
+
+// Mostrar o alerta
+function showSuccessAlert() {
+    successAlertBox.style.display = 'block'; // Define o display
+    setTimeout(() => {
+        successAlertBox.classList.add('active');
+        loginTitle.classList.add('active');
+        emailInputBox.classList.add('active'); // Inicia o fade-in
+    }, 0); // Pequeno atraso para ativar a transição
+}
+
+// Esconder o alerta
+function hideSuccessAlert() {
+    successAlertBox.classList.remove('active');
+    loginTitle.classList.remove('active');
+    emailInputBox.classList.remove('active'); // Inicia o fade-out
+    setTimeout(() => {
+        successAlertBox.style.display = 'none'; // Remove completamente após o fade-out
+    }, 500); // Duração do fade-out em ms
+}
 
 registerBtn.addEventListener('click', () => {
     container.classList.add('active');
@@ -80,8 +127,7 @@ document.querySelector('.register form').addEventListener('submit', function (e)
 const emailWarning = document.querySelector('.email-warning');
 const passwordWarning = document.querySelector('.password-warning');
 
-const emailInput = document.querySelector('input[placeholder="Email"]');
-const passwordInput = document.querySelector('input[placeholder="Senha"]');
+
 
 // Adiciona eventos de input para remover os avisos dinamicamente
 emailInput.addEventListener('input', function () {
@@ -100,29 +146,32 @@ passwordInput.addEventListener('input', function () {
 document.querySelector('.login form').addEventListener('submit', function (e) {
     e.preventDefault(); // Impede o envio do formulário
 
-    const emailInput = document.querySelector('input[placeholder="Email"]');
-    const passwordInput = document.querySelector('input[placeholder="Senha"]');
     const email = emailInput.value;
     const password = passwordInput.value;
 
     if (!isValidEmail(email)) {
         emailWarning.classList.add('active');
+        hideErrorAlert();
     }
 
     if (password.length < 6) {
         passwordWarning.classList.add('active');
+        hideErrorAlert();
     }
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(user => user.email === email && user.password === password);
 
-    if (user) {
-        alert("Login bem-sucedido!");
-        warning.classList.remove('active');
-        document.querySelector('.login form').reset();
-    } else {
-        warning.classList.remove('active');
-        alert("Email ou senha incorretos");
+    if (isValidEmail(email) && password.length >= 6) {
+        if (user) {
+            document.querySelector('.login form').reset();
+            hideErrorAlert();
+            showSuccessAlert();
+        } else {
+            hideSuccessAlert();
+            showErrorAlert();
+            warning.classList.remove('active');
+        }
     }
 });
 

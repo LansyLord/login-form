@@ -16,13 +16,21 @@
     <div class="container">
         <div class="form-box login">
             <form action="">
-                <h1>Login</h1>
-                <div class="input-box">
+                <div class="login-box">
+                    <h1 class="title">Login</h1>
+                    <div class="alert-error">
+                        Email ou senha inválidos!
+                    </div>
+                    <div class="alert-success">
+                        Login feito com sucesso!
+                    </div>
+                </div>
+                <div class="input-box email">
                     <input type="text" name="email" placeholder="Email" required>
                     <i class='bx bxs-envelope'></i>
                     <span class="email-warning">Insira um email válido</span>
                 </div>
-                <div class="input-box">
+                <div class="input-box password">
                     <input type="password" name="password" placeholder="Senha" required>
                     <i class='bx bxs-lock-alt'></i>
                     <span class="password-warning">A senha deve ter no mínimo 6 caracteres</span>
@@ -77,16 +85,13 @@
                 <button class="btn register-btn">Registre-se</button>
             </div>
             <div class="toggle-panel toggle-right">
-                <h1>Que bom que voltou!</h1>
+                <h1 class="register-panel-text">Que bom que voltou!</h1>
                 <p>Já tem uma conta?</p>
                 <button class="btn login-btn">Entre</button>
             </div>
         </div>
     </div>
-    <!-- <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        This is an alert box.
-    </div> -->
+
     <script src="script.js"></script>
 </body>
 

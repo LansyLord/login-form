@@ -24,15 +24,50 @@ body {
     margin: 0 20px;
 }
 
-/* .alert {
-    width: 300px;
+.alert-error {
+    opacity: 0;
+    width: 100%;
     padding: 10px 20px;
     background-color: #ffdddd;
     color: #333;
     border: 1px solid #ff0000;
     border-radius: 5px;
-    text-align: center;
-} */
+    text-align: left;
+    transition: 0.5s ease-in;
+    position: absolute;
+}
+
+.alert-error.active {
+    opacity: 1;
+    position: relative;
+}
+
+.alert-success {
+    opacity: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #e9ffdd;
+    color: #333;
+    border: 1px solid #4dff00;
+    border-radius: 5px;
+    text-align: left;
+    transition: 0.5s ease-in;
+    position: absolute;
+}
+
+.alert-success.active {
+    opacity: 1;
+    position: relative;
+}
+
+
+.container h1.title {
+    margin-bottom: 0;
+}
+
+.container h1.title.active {
+    margin-bottom: 30px;
+}
 
 .form-box {
     position: absolute;
@@ -65,9 +100,31 @@ form {
     width: 100%;
 }
 
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container h1 {
     font-size: 36px;
     margin: -10px 0;
+    transition: 0.5s ease-in-out;
+}
+
+.input-box.email {
+    position: relative;
+    margin-bottom: 30px;
+    transition: 0.5s ease-in-out;
+}
+
+.input-box.email.active {
+    margin-top: 30px;
+}
+
+.input-box.password {
+    position: relative;
+    margin: 30px 0;
 }
 
 .input-box {
@@ -89,36 +146,34 @@ form {
 
 .email-warning,
 .password-warning {
-    visibility: hidden;
+    opacity: 0;
     position: absolute;
     font-size: 12px;
     color: red;
-    margin-top: 0px;
+    margin-top: 55px;
     left: 20px;
-    transition: .5s ease-in-out;
+    transition: opacity 0.4s ease-in-out
 }
 
 .email-warning.active,
 .password-warning.active {
-    margin-top: -20px;
-    visibility: visible;
+    opacity: 1;
 }
 
 .register-email-warning,
 .register-password-warning {
-    visibility: hidden;
+    opacity: 0;
     position: absolute;
     font-size: 12px;
     color: red;
-    margin-top: 0px;
+    margin-top: 55px;
     left: 20px;
-    transition: .5s ease-in-out;
+    transition: opacity 0.4s ease-in-out
 }
 
 .register-email-warning.active,
 .register-password-warning.active {
-    margin-top: -20px;
-    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -138,12 +193,14 @@ input-box input::placeholder {
 
 .forgot-link {
     margin: -15px 0 15px;
+    text-align: right;
 }
 
 .forgot-link a {
     font-size: 14.5px;
     color: #333;
     text-decoration: none;
+    opacity: 80%;
 }
 
 .btn {
@@ -245,6 +302,10 @@ input-box input::placeholder {
     background: transparent;
     border: 2px solid #333;
     box-shadow: none;
+}
+
+.register-panel-text {
+    font-size: 30px !important;
 }
 
 @media screen and (max-width: 650px) {
