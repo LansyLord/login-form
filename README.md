@@ -1,4 +1,4 @@
-# 🛡️ Formulário de Login AVATI
+# 🛡️ Formulário de Login
 
 Um formulário de login moderno e responsivo com funcionalidades de validação, registro de novos usuários e feedback visual para erros e sucessos. Ideal para aplicações web que buscam uma interface elegante e funcional.
 
